@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - E-commerce</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color:black;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .faq {
+            margin-bottom: 20px;
+        }
+        .faq h2 {
+            font-size: 18px;
+            margin: 0 0 10px 0;
+            cursor: pointer;
+            color: #007BFF;
+        }
+        .faq p {
+            display: none;
+            margin: 0;
+            padding: 10px 0 0 0;
+            border-top: 1px solid #ddd;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: black;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Frequently Asked Questions (FAQs)</h1>
+</header>
+
+<div class="container">
+    <div class="faq">
+        <h2>What is your return policy?</h2>
+        <p>We offer a 30-day return policy on most items. Items must be unused and in their original packaging. For more details, please visit our return policy page.</p>
+    </div>
+    <div class="faq">
+        <h2>How long does shipping take?</h2>
+        <p>Shipping typically takes 5-7 business days for standard delivery. Expedited options are available at checkout.</p>
+    </div>
+    <div class="faq">
+        <h2>Do you ship internationally?</h2>
+        <p>Yes, we ship to select countries. International shipping costs and delivery times vary by location.</p>
+    </div>
+    <div class="faq">
+        <h2>How can I track my order?</h2>
+        <p>Once your order ships, you will receive a tracking number via email. Use it to track your order on our website or the carrier's site.</p>
+    </div>
+    <div class="faq">
+        <h2>What payment methods do you accept?</h2>
+        <p>We accept all major credit cards, PayPal, and other secure payment methods.</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Your Stockhub store. All rights reserved.</p>
+</footer>
+
+<script>
+    const faqs = document.querySelectorAll('.faq h2');
+
+    faqs.forEach(faq => {
+        faq.addEventListener('click', () => {
+            const answer = faq.nextElementSibling;
+            const isVisible = answer.style.display === 'block';
+            answer.style.display = isVisible ? 'none' : 'block';
+        });
+    });
+</script>
+
+</body>
+</html>

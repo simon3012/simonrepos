@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart with Images</title>
+    <div class="cart-icon" id="cart-icon">
+        🛒 <span id="item-count">0</span>
+    </div>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+        }
+        
+     .cart-icon {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #c94c4c;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+    .cart-icon span {
+        margin-left: 5px;
+    }
+
+        .item {
+            margin: 30px;
+            display: inline-block;
+            align-items: center;
+            flex-direction: row;
+            text-align: center;
+            border: 1px solid #5ae708;
+            padding: 10px;
+            border-radius: 5px;
+            background-color:white;
+           
+        }
+        .item img {
+            width: 200px;
+            height: 200px;
+            margin-right: 20px;
+        }
+        .cart {
+            margin-top: 30px;
+            border-top: 1px solid #c94c4c;
+            padding-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .item {
+                flex: 1 1 45%; /* Adjusts to two items per row on smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .item {
+                flex: 1 1 100%; /* Stacks items on small screens */
+            }
+            .cart {
+                margin-top: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Shopping Cart Example with Images</h1>
+
+    <!-- Item List -->
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\gardening\Knapsack-Sprayer-300x300.jpg">
+        <div>
+            <p><strong>Item 1</strong> - Price: $10</p>
+            <button onclick="addToCart('Item 1', 10)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\gardening\Hcfe28d3a0c6541e8b420ea9e5008791cF.jpg_300x300.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\gardening\H4641ee3a52ac40489d31b482b0ed2bacq.jpg_300x300.jpg">
+        <div>
+            <p><strong>Item 3</strong> - Price: $15</p>
+            <button onclick="addToCart('Item 3', 15)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\gardening\H4a17efc0836b46f7af2cab02297e319eO.jpg_720x720q50.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\gardening\Garden-Fork.webp">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\gardening\Farm-Tools-and-Equipment-and-Their-Use-Wheel-Barrow-WB3800-.webp">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\gardening\e31f8c965cc826fa183702beebe10be3.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\gardening\d9b6bf4f3555f7c4bf89774473ebe98d.png">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\gardening\Carbon-Steel-Garden-Spade-with-Steel-Handle-Farm-Tools-Farming-Shovel-Digging-Tool-Spade-and-Shovel.webp">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\gardening\632365_Rake-Hoe-Cultivator-Head_WEB.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\gardening\99fe5e619013d43eb600d999485eab8b.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\gardening\5e36c8b99ab180.14611764.jpg">
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\gardening\3D-Farm-_1.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\gardening\1aa430af30d614af74e74a7bab5db72c.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-maksgelatin-4348638.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-martin-138963-449609.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-mvtkvrimow-2885940.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-olly-3763871.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-paulvanyork-14214319.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-pexels-user-1464603298-26811651.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-pixabay-159728.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-pixabay-163439.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-pixabay-257970.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-ron-lach-10669594.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div> <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-sevenbcollection-28970060.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+
+
+    <!-- Cart Section -->
+    <div class="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p><strong>Total: $<span id="cart-total">0</span></strong></p>
+    
+        
+    </div>
+
+    <script>
+     
+ let cart = [];
+ let total = 0;
+ const MAX_ITEMS_DISPLAYED = 5;
+
+ function addToCart(itemName, itemPrice) {
+     // Add item to cart
+     cart.push({ name: itemName, price: itemPrice });
+     total += itemPrice;
+     updateCart();
+ }
+
+ function updateCart() {
+     // Update the cart display
+     let cartItems = document.getElementById('cart-items');           
+     let cartTotal = document.getElementById('cart-total');
+     let itemCount = document.getElementById('item-count');
+     cartItems.innerHTML = ''; // Clear previous items
+              
+     cart.forEach(function(item) {
+         let li = document.createElement('li');
+         li.textContent = `${item.name} - $${item.price}`;
+         cartItems.appendChild(li);
+     });
+     cartTotal.textContent = total.toFixed(2); // Update total
+     itemCount.textContent = cart.length;
+ }
+
+    </script>
+
+</body>
+</html>

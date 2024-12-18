@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart with Images</title>
+    <div class="cart-icon" id="cart-icon">
+        🛒 <span id="item-count">0</span>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+        }
+        
+     .cart-icon {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #c94c4c;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+    .cart-icon span {
+        margin-left: 5px;
+    }
+
+        .item {
+            margin: 30px;
+            display: inline-block;
+            align-items: center;
+            flex-direction: row;
+            text-align: center;
+            border: 1px solid #5ae708;
+            padding: 10px;
+            border-radius: 5px;
+            background-color:white;
+            
+        }
+        .item img {
+            width: 200px;
+            height: 200px;
+            margin-right: 20px;
+        }
+        .cart {
+            margin-top: 30px;
+            border-top: 1px solid #c94c4c;
+            padding-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .item {
+                flex: 1 1 45%; /* Adjusts to two items per row on smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .item {
+                flex: 1 1 100%; /* Stacks items on small screens */
+            }
+            .cart {
+                margin-top: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Shopping Cart Example with Images</h1>
+
+    <!-- Item List -->
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-ds-stories-9227213.jpg">
+        <div>
+            <p><strong>Item 1</strong> - Price: $10</p>
+            <button onclick="addToCart('Item 1', 10)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-ivan-samkov-8504438.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-karolina-grabowska-7269579.jpg">
+        <div>
+            <p><strong>Item 3</strong> - Price: $15</p>
+            <button onclick="addToCart('Item 3', 15)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-karolina-grabowska-7296430.jpg">
+        <div>
+            <p><strong>Item 4</strong> - Price: $85</p>
+            <button onclick="addToCart('Item 4', 85)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-karolina-grabowska-8909657.jpg">
+        <div>
+            <p><strong>Item 5</strong> - Price: $95</p>
+            <button onclick="addToCart('Item 5', 95)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-lara-jameson-8828428.jpg">
+        <div>
+            <p><strong>Item 6</strong> - Price: $30</p>
+            <button onclick="addToCart('Item 6', 30)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-markusspiske-1971084.jpg">
+        <div>
+            <p><strong>Item 7</strong> - Price: $120</p>
+            <button onclick="addToCart('Item 7', 120)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-miami302-18403892.jpg">
+        <div>
+            <p><strong>Item 8</strong> - Price: $100</p>
+            <button onclick="addToCart('Item 8', 100)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-mizunokozuki-12788393.jpg">
+        <div>
+            <p><strong>Item 9</strong> - Price: $50</p>
+            <button onclick="addToCart('Item 9', 50)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-mizunokozuki-12788413.jpg">
+        <div>
+            <p><strong>Item 10</strong> - Price: $55</p>
+            <button onclick="addToCart('Item 10', 55)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-mizunokozuki-12788679.jpg">
+        <div>
+            <p><strong>Item 11</strong> - Price: $65</p>
+            <button onclick="addToCart('Item 11', 65)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-pavel-danilyuk-8422176.jpg">
+            <p><strong>Item 12</strong> - Price: $70</p>
+            <button onclick="addToCart('Item 12', 70)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-pavel-danilyuk-8763061.jpg">
+        <div>
+            <p><strong>Item 13</strong> - Price: $55</p>
+            <button onclick="addToCart('Item 13', 55)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-pixabay-35967.jpg">
+        <div>
+            <p><strong>Item 14</strong> - Price: $45</p>
+            <button onclick="addToCart('Item 14', 45)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-polesietoys-4488076.jpg">
+        <div>
+            <p><strong>Item 15</strong> - Price: $35</p>
+            <button onclick="addToCart('Item 15', 35)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-polesietoys-4491548.jpg">
+        <div>
+            <p><strong>Item 16</strong> - Price: $105</p>
+            <button onclick="addToCart('Item 16', 105)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-polesietoys-4491563.jpg">
+        <div>
+            <p><strong>Item 17</strong> - Price: $105</p>
+            <button onclick="addToCart('Item 17', 105)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-polesietoys-4491733.jpg">
+        <div>
+            <p><strong>Item 18</strong> - Price: $60</p>
+            <button onclick="addToCart('Item 18', 60)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-polesietoys-6129382.jpg">
+        <div>
+            <p><strong>Item 19</strong> - Price: $50</p>
+            <button onclick="addToCart('Item 19', 50)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-polesietoys-27738373.jpg">
+        <div>
+            <p><strong>Item 20</strong> - Price: $40</p>
+            <button onclick="addToCart('Item 20', 40)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-polina-tankilevitch-5257433.jpg">
+        <div>
+            <p><strong>Item 21</strong> - Price: $25</p>
+            <button onclick="addToCart('Item 21', 25)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-polina-tankilevitch-6743148.jpg">
+        <div>
+            <p><strong>Item 22</strong> - Price: $30</p>
+            <button onclick="addToCart('Item 22', 30)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-reiner-schneider-1313702650-25649833.jpg">
+        <div>
+            <p><strong>Item 23</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 23', 20)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-ron-lach-10037060.jpg">
+        <div>
+            <p><strong>Item 24</strong> - Price: $30</p>
+            <button onclick="addToCart('Item 24', 30)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div> <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\toys and games\pexels-polina-tankilevitch-5257434.jpg">
+        <div>
+            <p><strong>Item 25</strong> - Price: $25</p>
+            <button onclick="addToCart('Item 25', 25)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+        </div>
+    </div>
+
+
+    <!-- Cart Section -->
+    <div class="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p><strong>Total: $<span id="cart-total">0</span></strong></p>
+    
+        
+    </div>
+    <div id="payment-section" class="hidden">
+        <h2>Payment Options</h2>
+      
+        <label for="payment-method">Choose Payment Method:</label>
+        <select id="payment-method">
+          <option value="cash">Cash</option>
+          <option value="credit-card"> Card</option>
+          <option value="paypal">PayPal</option>
+        </select>
+        <button onclick="completePayment()">Pay Now</button>
+      </div>
+
+    <script>
+        let cart = [];
+        let total = 0;
+    
+        function addToCart(itemName, itemPrice) {
+          // Add item to cart
+          cart.push({ name: itemName, price: itemPrice });
+          total += itemPrice;
+          updateCart();
+        }
+    
+        function removeFromCart(index) {
+          // Remove item from cart and update total
+          total -= cart[index].price;
+          cart.splice(index, 1); // Remove the item at the given index
+          updateCart();
+        }
+    
+        function updateCart() {
+          // Update the cart display
+          let cartItems = document.getElementById('cart-items');
+          let cartTotal = document.getElementById('cart-total');
+          let itemCount = document.getElementById('item-count');
+          let checkoutBtn = document.getElementById('checkout-btn');
+          cartItems.innerHTML = ''; // Clear previous items
+    
+          cart.forEach(function (item, index) {
+            let li = document.createElement('li');
+            li.textContent = `${item.name} - $${item.price}`;
+    
+            // Add a "Remove" button for each item
+            let removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.style.marginLeft = '10px';
+            removeButton.onclick = function () {
+              removeFromCart(index); // Pass the index of the item to remove
+            };
+    
+            li.appendChild(removeButton);
+            cartItems.appendChild(li);
+          });
+    
+          // Update total and item count
+          cartTotal.textContent = total.toFixed(2);
+          itemCount.textContent = cart.length;
+    
+          // Show or hide the "Checkout" button
+          checkoutBtn.classList.toggle('hidden', cart.length === 0);
+        }
+    
+        function showPaymentOptions() {
+          const paymentSection = document.getElementById('payment-section');
+          const paymentTotal = document.getElementById('payment-total');
+    
+          // Show payment options
+          paymentTotal.textContent = total.toFixed(2);
+          paymentSection.classList.remove('hidden');
+        }
+    
+        function completePayment() {
+          const paymentMethod = document.getElementById('payment-method').value;
+          
+          // Display a success message and reset the cart
+          alert(`Payment of $${total.toFixed(2)} completed using ${paymentMethod}. Thank you for shopping!`);
+          cart = [];
+          total = 0;
+          updateCart();
+    
+          // Hide the payment section
+          document.getElementById('payment-section').classList.add('hidden');
+        }
+
+    </script>
+
+</body>
+</html>

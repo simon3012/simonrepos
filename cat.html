@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping Cart</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="item">
+    <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-willianjusten-792345.jpg" alt="Apple Computer" width="200">
+    <div>
+      <p><strong>Apple computer</strong> - Price: $20</p>
+      <button onclick="addToCart('Apple computer', 20)">Add to Cart</button>
+    </div>
+    <div class="star-rating">
+      <input type="radio" id="star5" name="rating" value="5">
+      <label for="star5">★</label>
+      <input type="radio" id="star4" name="rating" value="4">
+      <label for="star4">★</label>
+      <input type="radio" id="star3" name="rating" value="3">
+      <label for="star3">★</label>
+      <input type="radio" id="star2" name="rating" value="2">
+      <label for="star2">★</label>
+      <input type="radio" id="star1" name="rating" value="1">
+      <label for="star1">★</label>
+    </div>
+  </div>
+
+  <h2>Your Cart</h2>
+  <ul id="cart-items"></ul>
+  <p>Total: $<span id="cart-total">0.00</span></p>
+  <p>Items in Cart: <span id="item-count">0</span></p>
+  <button onclick="showPaymentOptions()" id="checkout-btn" class="hidden">Checkout</button>
+
+  <!-- Payment Section -->
+  <div id="payment-section" class="hidden">
+    <h2>Payment Options</h2>
+    <p>Total Amount Due: $<span id="payment-total">0.00</span></p>
+    <label for="payment-method">Choose Payment Method:</label>
+    <select id="payment-method">
+      <option value="cash">Cash</option>
+      <option value="credit-card">Credit Card</option>
+      <option value="paypal">PayPal</option>
+    </select>
+    <button onclick="completePayment()">Pay Now</button>
+  </div>
+
+  <script>
+    let cart = [];
+    let total = 0;
+
+    function addToCart(itemName, itemPrice) {
+      // Add item to cart
+      cart.push({ name: itemName, price: itemPrice });
+      total += itemPrice;
+      updateCart();
+    }
+
+    function removeFromCart(index) {
+      // Remove item from cart and update total
+      total -= cart[index].price;
+      cart.splice(index, 1); // Remove the item at the given index
+      updateCart();
+    }
+
+    function updateCart() {
+      // Update the cart display
+      let cartItems = document.getElementById('cart-items');
+      let cartTotal = document.getElementById('cart-total');
+      let itemCount = document.getElementById('item-count');
+      let checkoutBtn = document.getElementById('checkout-btn');
+      cartItems.innerHTML = ''; // Clear previous items
+
+      cart.forEach(function (item, index) {
+        let li = document.createElement('li');
+        li.textContent = `${item.name} - $${item.price}`;
+
+        // Add a "Remove" button for each item
+        let removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.style.marginLeft = '10px';
+        removeButton.onclick = function () {
+          removeFromCart(index); // Pass the index of the item to remove
+        };
+
+        li.appendChild(removeButton);
+        cartItems.appendChild(li);
+      });
+
+      // Update total and item count
+      cartTotal.textContent = total.toFixed(2);
+      itemCount.textContent = cart.length;
+
+      // Show or hide the "Checkout" button
+      checkoutBtn.classList.toggle('hidden', cart.length === 0);
+    }
+
+    function showPaymentOptions() {
+      const paymentSection = document.getElementById('payment-section');
+      const paymentTotal = document.getElementById('payment-total');
+
+      // Show payment options
+      paymentTotal.textContent = total.toFixed(2);
+      paymentSection.classList.remove('hidden');
+    }
+
+    function completePayment() {
+      const paymentMethod = document.getElementById('payment-method').value;
+      
+      // Display a success message and reset the cart
+      alert(`Payment of $${total.toFixed(2)} completed using ${paymentMethod}. Thank you for shopping!`);
+      cart = [];
+      total = 0;
+      updateCart();
+
+      // Hide the payment section
+      document.getElementById('payment-section').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

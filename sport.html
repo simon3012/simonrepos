@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart with Images</title>
+    <div class="cart-icon" id="cart-icon">
+        🛒 <span id="item-count">0</span>
+    </div>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+        }
+        
+     .cart-icon {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #c94c4c;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+    .cart-icon span {
+        margin-left: 5px;
+    }
+
+        .item {
+            margin: 30px;
+            display: inline-block;
+            align-items: center;
+            flex-direction: row;
+            text-align: center;
+            border: 1px solid #5ae708;
+            padding: 10px;
+            border-radius: 5px;
+            background-color:white;
+           
+        }
+        .item img {
+            width: 200px;
+            height: 200px;
+            margin-right: 20px;
+        }
+        .cart {
+            margin-top: 30px;
+            border-top: 1px solid #c94c4c;
+            padding-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .item {
+                flex: 1 1 45%; /* Adjusts to two items per row on smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .item {
+                flex: 1 1 100%; /* Stacks items on small screens */
+            }
+            .cart {
+                margin-top: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Shopping Cart Example with Images</h1>
+
+    <!-- Item List -->
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-abdelkabir-elaghfiri-1936838076-28958735.jpg">
+        <div>
+            <p><strong>Item 1</strong> - Price: $10</p>
+            <button onclick="addToCart('Item 1', 10)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-airamdphoto-27064348.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-alexazabache-4039919.jpg">
+        <div>
+            <p><strong>Item 3</strong> - Price: $15</p>
+            <button onclick="addToCart('Item 3', 15)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-aravindhan-c-1933613249-28926642.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-arturo-megargel-1990626909-28964175.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-arturo-megargel-1990626909-28964276.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-cottonbro-6230538.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-davide-gargiulo-1110686865-28922125.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-dream_-makkerzz-1603229-28762276.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-ebuuyildiz-28946804.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-fatima-zahra-essadaqa-2002554597-29003098.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-frederthal-3571569.jpg">
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-gerxrd-25-1469882273-28944061.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-jaime-reimer-1376930-2749500.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-maksgelatin-4348638.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-martin-138963-449609.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-mvtkvrimow-2885940.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-olly-3763871.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-paulvanyork-14214319.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-pexels-user-1464603298-26811651.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-pixabay-159728.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-pixabay-163439.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-pixabay-257970.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-ron-lach-10669594.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div> <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\sports\pexels-sevenbcollection-28970060.jpg">
+        <div>
+            <p><strong>Item 2</strong> - Price: $20</p>
+            <button onclick="addToCart('Item 2', 20)">Add to Cart</button>
+        </div>
+    </div>
+
+
+    <!-- Cart Section -->
+    <div class="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p><strong>Total: $<span id="cart-total">0</span></strong></p>
+    
+        
+    </div>
+
+    <script>
+     
+ let cart = [];
+ let total = 0;
+ const MAX_ITEMS_DISPLAYED = 5;
+
+ function addToCart(itemName, itemPrice) {
+     // Add item to cart
+     cart.push({ name: itemName, price: itemPrice });
+     total += itemPrice;
+     updateCart();
+ }
+
+ function updateCart() {
+     // Update the cart display
+     let cartItems = document.getElementById('cart-items');           
+     let cartTotal = document.getElementById('cart-total');
+     let itemCount = document.getElementById('item-count');
+     cartItems.innerHTML = ''; // Clear previous items
+              
+     cart.forEach(function(item) {
+         let li = document.createElement('li');
+         li.textContent = `${item.name} - $${item.price}`;
+         cartItems.appendChild(li);
+     });
+     cartTotal.textContent = total.toFixed(2); // Update total
+     itemCount.textContent = cart.length;
+ }
+
+    </script>
+
+</body>
+</html>

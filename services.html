@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stockhub Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 8px;
+            padding: 0;
+            background-color: #d6eca1;
+        }
+        header {
+            background-color:black;
+            color: rgb(134, 48, 7);
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .service {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            flex: 1 1 30%;
+            transition: transform 0.2s;
+            position: relative;
+        }
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .service-icon {
+            font-size: 50px;
+            color: #007bff;
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+        .service h2 {
+            font-size: 24px;
+            margin-left: 5px;
+        }
+        .service p {
+            padding: 0 20px 20px;
+            color: #666;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color:black;
+            color: white;
+            position: relative;
+            bottom: 0;
+            margin: 7px;
+            margin-left: 1px;
+            margin-right:1px ;
+        }
+        @media (max-width: 768px) {
+            .service {
+                flex: 1 1 100%;
+            }
+        }
+        a:hover {
+            color:green;
+            text-decoration: underline;
+       }
+       a{
+        font-weight: bold;
+       }
+        
+    </style>
+</head>
+<body background="C:\Users\simon\Desktop\codehtml\photosweb\imageweb\design3.png">
+
+<header>
+    <h1>Our Stockhub Services</h1>
+    <p style="font-weight: bold;">Your one-stop solution for online shopping!</p>
+    <nav>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/main.html" style="margin-left: 10px;">Home</a>
+       <!-- <a href="file:///C:/Users/simon/Desktop/codehtml/products.html"  style="margin-left: 10px;">Products</a>-->
+        <a href="file:///C:/Users/simon/Desktop/codehtml/categories.html" style="margin-left: 10px;">Categories</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/about.html" style="margin-left: 10px;">About Us</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/services.html" style="margin-left: 10px;">Services</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/inspirations.html" style="margin-left: 10px;">Inspirations</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/order.html" style="margin-left: 10px;">Order</a>
+       <!---<a href="file:///C:/Users/simon/Desktop/codehtml/contacts.html"style="margin-left: 10px;">Contact</a>-->
+    </nav>
+</header>
+
+<div class="container">
+    <div class="service">
+        <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+        <h2>Online Shopping</h2>
+        <p>Shop from the comfort of your home with our extensive range of products.</p>
+        <a href="#" class="cta-button">Shop Now</a>
+    </div>
+    <div class="service">
+        <div class="service-icon"><i class="fas fa-truck"></i></div>
+        <h2>Fast Delivery</h2>
+        <p>Get your orders delivered to your doorstep in record time.</p>
+        <a href="#" class="cta-button">Learn More</a>
+    </div>
+    <div class="service">
+        <div class="service-icon"><i class="fas fa-sync-alt"></i></div>
+        <h2>Easy Returns</h2>
+        <p>Return products hassle-free within 30 days of purchase.</p>
+        <a href="#" class="cta-button">Return Policy</a>
+    </div>
+    <div class="service">
+        <div class="service-icon"><i class="fas fa-credit-card"></i></div>
+        <h2>Secure Payments</h2>
+        <p>Your payment information is safe with our advanced security features.</p>
+        <a href="#" class="cta-button">Payment Options</a>
+    </div>
+    <div class="service">
+        <div class="service-icon"><i class="fas fa-headset"></i></div>
+        <h2>24/7 Support</h2>
+        <p>We're here to help you anytime, day or night!</p>
+        <a href="#" class="cta-button">Contact Us</a>
+    </div>
+    <div class="service">
+        <div class="service-icon"><i class="fas fa-tags"></i></div>
+        <h2>Best Prices</h2>
+        <p>Shop confidently with our price match guarantee.</p>
+        <a href="#" class="cta-button">See Deals</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Stockhub Website. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

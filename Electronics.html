@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart with Images</title>
+
+   <div class="cart-icon" id="cart-icon">
+        🛒 <span id="item-count">0</span>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+        }
+        .cart-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #c94c4c;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .cart-icon span {
+            margin-left: 5px;
+        }
+
+        .item {
+            margin: 30px;
+            display: inline-block;
+            align-items: center;
+            flex-direction: row;
+            text-align: center;
+            border: 1px solid #5ae708;
+            padding: 10px;
+            border-radius: 5px;
+            background-color:white;
+           
+        }
+        .item img {
+            width: 200px;
+            height: 200px;
+            margin-right: 10px;
+        }
+        .cart {
+            margin-top: 30px;
+            border-top: 1px solid #c94c4c;
+            padding-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .item {
+                flex: 1 1 45%; /* Adjusts to two items per row on smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .item {
+                flex: 1 1 100%; /* Stacks items on small screens */
+            }
+            .cart {
+                margin-top: 20px;
+            }
+        }
+       
+
+    </style>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+        }
+        .review-section {
+          max-width: 400px;
+          margin: 0 auto;
+        }
+        .star-rating {
+          display: flex;
+          gap: 5px;
+          font-size:30px;
+          cursor: pointer;
+        }
+        .star {
+          color: lightgray;
+          transition: color 0.2s;
+        }
+        .star.selected {
+          color:gold;
+        }
+    
+        .review-item .rating {
+          font-size: 30px;
+          color:gold;
+        }
+        .star-rating, .rating-star {
+            display: flex;
+            direction: row-reverse;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
+            cursor: pointer;
+            color: #ddd;
+        }
+
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: gold;
+    }
+   
+      </style>
+    
+</head>
+<body>
+   
+
+    <h1>Shopping Cart Example with Images</h1>
+
+    <!-- Item List -->
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-axa-crown-351888914-14272792.jpg">
+        <div>
+            <p><strong>Earphone</strong> - Price: $20</p>
+            <button onclick="addToCart('Earphone', 10)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 20)"></button>
+        </div>
+        <div class="rating-widget">
+            <p>Rate this product:</p>
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">★</label>
+            </div>
+        </div>
+     
+</div>
+
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-capondesign-1261829.jpg">
+        <div>
+            <p><strong>Binoculars</strong> - Price: $10</p>
+            <button onclick="addToCart('Binoculars', 10)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 10)"></button>
+        </div>
+        <div class="rating-widget">
+            <p>Rate this product:</p>
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">★</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-cottonbro-4551325.jpg">
+        <div>
+            <p><strong>Telephone</strong> - Price: $15</p>
+            <button onclick="addToCart('Telephone', 15)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 15)"></button>
+        </div>
+        <div class="rating-widget">
+            <p>Rate this product:</p>
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">★</label>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-ekrulila-2305761.jpg">
+        <div>
+            <p><strong>Camera</strong> - Price: $40</p>
+            <button onclick="addToCart('Camera', 40)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 40)"></button>
+        </div>
+        <div class="rating-widget">
+            <p>Rate this product:</p>
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">★</label>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-flodahm-699459.jpg">
+        <div>
+            <p><strong>Laptops</strong> - Price: $50</p>
+            <button onclick="addToCart('Laptops', 50)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 50)"></button>
+        </div>
+        <div class="rating-widget">
+            <p>Rate this product:</p>
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">★</label>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-iurii-laimin-78973777-9555131.jpg">
+        <div>
+            <p><strong>Smartphone</strong> - Price: $70</p>
+            <button onclick="addToCart('Smartphone', 70)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 70)"></button>
+        </div>
+        <div class="rating-widget">
+            <p>Rate this product:</p>
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">★</label>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-karolina-grabowska-5877660.jpg">
+        <div>
+            <p><strong>Bluetooth earphone</strong> - Price: $25</p>
+            <button onclick="addToCart('Bluetooth earphone', 25)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 25)"></button>
+        </div>
+        <div class="rating-widget">
+            <p>Rate this product:</p>
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">★</label>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-kindelmedia-8566468.jpg">
+        <div>
+            <p><strong>robot machine</strong> - Price: $240</p>
+            <button onclick="addToCart('robot nachine', 240)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 240)"></button>
+        </div>
+        <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">★</label>
+        </div>
+    </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-knownasovan-62689.jpg">
+        <div>
+            <p><strong>Electronic accessories</strong> - Price: $345</p>
+            <button onclick="addToCart('Electronic accesssories', 345)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 345)"></button>
+        </div>
+        <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">★</label>
+        </div>
+    </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-lilartsy-3563627.jpg">
+        <div>
+            <p><strong>Electronics</strong> - Price: $100</p>
+            <button onclick="addToCart('Electronics', 100)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 100)"></button>
+        </div>
+        <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">★</label>
+        </div>
+    </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-mikhail-nilov-6963017.jpg">
+        <div>
+            <p><strong>Calculator</strong> - Price: $25</p>
+            <button onclick="addToCart('Calculator', 25)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 25)"></button>
+        </div>
+        <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">★</label>
+        </div>
+    </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-obi-onyeador-1787470-13175225.jpg">
+        <div>
+            <p><strong>Flash Drive</strong> - Price: $25</p>
+            <button onclick="addToCart('Flash Drive', 25)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 25)"></button>
+        </div>
+        <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">★</label>
+        </div>
+    </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-obi-onyeador-1787470-13660566.jpg">
+        <div>
+            <p><strong>CCTV Camera</strong> - Price: $45</p>
+            <button onclick="addToCart('CCTV camera', 45)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 45)"></button>
+        </div>
+        <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">★</label>
+        </div>
+    </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-pixabay-356056.jpg">
+        <div>
+            <p><strong>Computer</strong> - Price: $75</p>
+            <button onclick="addToCart('Computer', 75)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 75)"></button>
+        </div>
+        <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">★</label>
+        </div>
+    </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-polina-tankilevitch-4522994.jpg">
+        <div>
+            <p><strong>pads</strong> - Price: $55</p>
+            <button onclick="addToCart('pads', 55)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 55)"></button>
+        </div>
+        <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">★</label>
+        </div>
+    </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-readymade-4032362.jpg">
+        <div>
+            <p><strong>I-phone</strong> - Price: $450</p>
+            <button onclick="addToCart('iphone', 450)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 450)"></button>
+        </div>
+        <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">★</label>
+        </div>
+    </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-rubaitulazad-12743405.jpg">
+        <div>
+            <p><strong>USB drive</strong> - Price: $20</p>
+            <button onclick="addToCart('USB drive', 20)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 20)"></button>
+        </div>
+        <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">★</label>
+        </div>
+    </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-shvets-production-7562427.jpg">
+        <div>
+            <p><strong>Flash torch</strong> - Price: $25</p>
+            <button onclick="addToCart('Flash torch', 25)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 25)"></button>
+        </div>
+        <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">★</label>
+        </div>
+    </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-sound-on-3394652.jpg">
+        <div>
+            <p><strong>Headphone</strong> - Price: $30</p>
+            <button onclick="addToCart('Headphone', 30)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 30)"></button>
+        </div>
+        <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">★</label>
+        </div>
+    </div>
+    </div>
+    <div class="item">
+        <img src="C:\Users\simon\Desktop\codehtml\photosweb\electronics\pexels-willianjusten-792345.jpg">
+        <div>
+            <p><strong>Apple computer</strong> - Price: $220</p>
+            <button onclick="addToCart('Apple computer', 220)">Add to Cart</button>
+            <button onclick="removeFromCart('Binoculars', 220)"></button>
+          
+        </div>
+        <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">★</label>
+        </div>
+    </div>
+
+        </div>
+   
+
+    <!-- Cart Section -->
+    <div class="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p><strong>Total: $<span id="cart-total">0</span></strong></p>
+    
+        
+    </div>
+
+    <div id="payment-section" class="hidden">
+        <h2>Payment Options</h2>
+      
+        <label for="payment-method">Choose Payment Method:</label>
+        <select id="payment-method">
+          <option value="cash">Cash</option>
+          <option value="credit-card"> Card</option>
+          <option value="paypal">PayPal</option>
+        </select>
+        <button onclick="completePayment()">Pay Now</button>
+      </div>
+
+    <script>
+    
+
+    
+        let cart = [];
+        let total = 0;
+    
+        function addToCart(itemName, itemPrice) {
+          // Add item to cart
+          cart.push({ name: itemName, price: itemPrice });
+          total += itemPrice;
+          updateCart();
+        }
+    
+        function removeFromCart(index) {
+          // Remove item from cart and update total
+          total -= cart[index].price;
+          cart.splice(index, 1); // Remove the item at the given index
+          updateCart();
+        }
+    
+        function updateCart() {
+          // Update the cart display
+          let cartItems = document.getElementById('cart-items');
+          let cartTotal = document.getElementById('cart-total');
+          let itemCount = document.getElementById('item-count');
+          let checkoutBtn = document.getElementById('checkout-btn');
+          cartItems.innerHTML = ''; // Clear previous items
+    
+          cart.forEach(function (item, index) {
+            let li = document.createElement('li');
+            li.textContent = `${item.name} - $${item.price}`;
+    
+            // Add a "Remove" button for each item
+            let removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.style.marginLeft = '10px';
+            removeButton.onclick = function () {
+              removeFromCart(index); // Pass the index of the item to remove
+            };
+    
+            li.appendChild(removeButton);
+            cartItems.appendChild(li);
+          });
+    
+          // Update total and item count
+          cartTotal.textContent = total.toFixed(2);
+          itemCount.textContent = cart.length;
+    
+          // Show or hide the "Checkout" button
+          checkoutBtn.classList.toggle('hidden', cart.length === 0);
+        }
+    
+        function showPaymentOptions() {
+          const paymentSection = document.getElementById('payment-section');
+          const paymentTotal = document.getElementById('payment-total');
+    
+          // Show payment options
+          paymentTotal.textContent = total.toFixed(2);
+          paymentSection.classList.remove('hidden');
+        }
+    
+        function completePayment() {
+          const paymentMethod = document.getElementById('payment-method').value;
+          
+          // Display a success message and reset the cart
+          alert(`Payment of $${total.toFixed(2)} completed using ${paymentMethod}. Thank you for shopping!`);
+          cart = [];
+          total = 0;
+          updateCart();
+    
+          // Hide the payment section
+          document.getElementById('payment-section').classList.add('hidden');
+        }
+
+          
+    </script>
+
+</body>
+</html>

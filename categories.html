@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Categories Stockhub store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin:color black;
+            padding: 0;
+            background-color:white;
+        }
+        header {
+            background-color:black;
+            color: rgb(134, 48, 7);
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            /*background-color: #0056b3;*/
+        }
+        nav a {
+            color:rgb(245, 143, 10);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+           /* background-image: url('https://via.placeholder.com/1200x400');*/
+            background-size: cover;
+            background-position: center;
+            color:rgb(134, 48, 7);
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h2 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        .category-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .category-item {
+            background-color:lightgreen;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            padding: 20px;
+            text-align: center;
+            flex: 1 1 calc(30% - 30px);
+            transition: transform 0.3s ease;
+        }
+        .category-item:hover {
+            transform: translateY(-5px);
+        }
+       
+        .category-item h3 {
+            margin: 15px 0;
+            font-size: 24px;
+            color:rgb(245, 143, 10);
+        }
+        .category-item p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #ac3636;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #00b30f;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        footer .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        footer .social-icons {
+            margin-top: 20px;
+        }
+        footer .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .category-item {
+                flex: 1 1 calc(45% - 20px); /* 2 items per row on smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .category-item {
+                flex: 1 1 100%; /* 1 item per row on mobile */
+            }
+        }
+        a:hover {
+            color:green;
+            text-decoration: underline;
+       }
+    </style>
+</head>
+<body background="C:\Users\simon\Desktop\codehtml\photosweb\imageweb\ph.png">
+
+<header>
+    <h1>Our Product Categories</h1>
+    <nav>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/main.html">Home</a>
+        <!--<a href="file:///C:/Users/simon/Desktop/codehtml/products.html">Products</a>-->
+        <a href="file:///C:/Users/simon/Desktop/codehtml/categories.html">Categories</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/about.html">About Us</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/services.html">Services</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/inspirations.html">Inspirations</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/order.html">Order</a>
+        <!--<a href="file:///C:/Users/simon/Desktop/codehtml/contacts.html">Contact</a>-->
+    </nav>
+    </nav>
+</header>
+
+
+<div class="hero">
+    <h2>Discover Our Wide Range of Products</h2>
+    <p style="font-weight: bold;">Explore the best in fashion, electronics, home decor, and more.</p>
+</div>
+<!--<img src="C:\Users\simon\Desktop\codehtml\photosweb\imageweb\Screenshot (7).png" style="margin-left:20%;">-->
+<div class="container">
+    <h2 class="section-title">Explore Categories🛒</h2>
+    
+    <div class="category-section">
+        <div class="category-item">
+            <h3>Electronics</h3>
+            <p  style="font-weight: bold;">Latest gadgets, smartphones, and accessories to keep you connected and entertained.</p>
+            <a href= "file:///C:/Users/simon/Desktop/codehtml/Electronics.html" class="cta-button">Shop Electronics</a>
+           
+        </div>
+        <div class="category-item">
+            <h3>Fashion</h3>
+            <p  style="font-weight: bold;">Trendy clothing and accessories for men, women, and kids to keep you stylish every day.</p>
+            <a href="file:///C:/Users/simon/Desktop/codehtml/fashion.html" class="cta-button">Shop Fashion</a>
+        </div>
+        <div class="category-item">
+            <h3>Home Decor</h3>
+            <p  style="font-weight: bold;">Beautiful home furnishings, kitchenware, and decor to make your space feel like home.</p>
+            <a href="file:///C:/Users/simon/Desktop/codehtml/homedecor.html" class="cta-button">Shop Home Decor</a>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <div class="category-item">
+            <h3>Beauty & Health</h3>
+            <p  style="font-weight: bold;">Top beauty products and health essentials for a glowing, healthy lifestyle.</p>
+            <a href=file:///C:/Users/simon/Desktop/codehtml/beauty%26health.html class="cta-button">Shop Beauty & Health</a>
+        </div>
+        <div class="category-item">
+            <h3>Sports & Outdoors</h3>
+            <p  style="font-weight: bold;">Gear up for your next adventure with sports equipment, outdoor gear, and more.</p>
+            <a href="file:///C:/Users/simon/Desktop/codehtml/sport.html" class="cta-button">Shop Sports & Outdoors</a>
+        </div>
+        <div class="category-item">
+            <h3>Toys & Games</h3>
+            <p  style="font-weight: bold;">Fun and educational toys for children of all ages, including the latest games and puzzles.</p>
+            <a href="file:///C:/Users/simon/Desktop/codehtml/toys.html" class="cta-button">Shop Toys & Games</a>
+        </div>
+        <div class="category-item">
+            <h3>Music & instruments</h3>
+            <p  style="font-weight: bold;">Get musical instruments for all purposes</p>
+            <a href="file:///C:/Users/simon/Desktop/codehtml/music.html" class="cta-button">Shop music instruments</a>
+        </div>
+        <div class="category-item">
+            <h3>Gardening tools</h3>
+            <p  style="font-weight: bold;">Tools for use in farms and garden</p>
+            <a href="file:///C:/Users/simon/Desktop/codehtml/garden.html" class="cta-button">Shop gardening tools</a>
+        </div>
+        <div class="category-item">
+            <h3>Pet supplies</h3>
+            <p  style="font-weight: bold;">Get items for pets </p>
+            <a href="file:///C:/Users/simon/Desktop/codehtml/pet.html" class="cta-button">Shop pet supplies</a>
+        </div>
+        <div class="category-item">
+            <h3>Automotive</h3>
+            <p  style="font-weight: bold;">Get all vehicle types affordably</p>
+            <a href=file:///C:/Users/simon/Desktop/codehtml/Automotives.html class="cta-button">Shop vehicles</a>
+        </div>
+        <div class="category-item">
+            <h3>Furniture</h3>
+            <p  style="font-weight: bold;">purchase all varieties of furniture for indoor and outdoor using</p>
+            <a href="file:///C:/Users/simon/Desktop/codehtml/furniture.html" class="cta-button">Shop Furnitures</a>
+        </div>
+        <div class="category-item">
+            <h3>Books and Stationery</h3>
+            <p  style="font-weight: bold;">Get all categories of books and Stationery for educational purposes</p>
+            <a href="file:///C:/Users/simon/Desktop/codehtml/Books%26stationeries.html" class="cta-button">Shop Books and Stationery</a>
+        </div>
+        <div class="category-item">
+            <h3>Health & Wellness</h3>
+            <p  style="font-weight: bold;">Get health fittness equipments and drugs</p>
+            <a href="file:///C:/Users/simon/Desktop/codehtml/health%26wellness.html" class="cta-button">Shop Health & Wellness</a>
+        </div>
+        <div class="category-item">
+            <h3>Office supplies</h3>
+            <p  style="font-weight: bold;">Get office tools, equipments and accessories</p>
+            <a href="file:///C:/Users/simon/Desktop/codehtml/office.html" class="cta-button">Shop office supplies</a>
+        </div>
+        <div class="category-item">
+            <h3>Arts & Crafts</h3>
+            <p  style="font-weight: bold;">All arts and crafts accessare available  </p>
+            <a href=file:///C:/Users/simon/Desktop/codehtml/Arts%20%26%20crafts.html class="cta-button">Shop arts and accessories</a>
+        </div>
+        <div class="category-item">
+            <h3>Home Appliancss</h3>
+            <p  style="font-weight: bold;">Get house equipments for dinning,table room, kitchen and bedroom</p>
+            <a href="file:///C:/Users/simon/Desktop/codehtml/homeappliances.html" class="cta-button">Shop Home Appliances</a>
+        </div>
+        <div class="category-item">
+            <h3>Groceries & foods</h3>
+            <p  style="font-weight: bold;">purchase all food stuffs and Groceries including processed and non processed foods </p>
+            <a href="file:///C:/Users/simon/Desktop/codehtml/groceries%26foods.html" class="cta-button">Shop groceries and foods</a>
+        </div>
+        <div class="category-item">
+            <h3>Jewelry & Watches</h3>
+            <p  style="font-weight: bold;">Get ornamentals and beauty elements and classical digital Watches</p>
+            <a href="file:///C:/Users/simon/Desktop/codehtml/jewels%26watches.html" class="cta-button">Shop Jewelry & Watches</a>
+        </div>
+        <div class="category-item">
+            <h3>Baby products</h3>
+            <p  style="font-weight: bold;">Vast categories of baby products for care and and maintenance of babies</p>
+            <a href=file:///C:/Users/simon/Desktop/codehtml/babyproducts.html class="cta-button">Shop Baby product</a>
+        </div>
+        <div class="category-item">
+            <h3>Toys & Games</h3>
+            <p  style="font-weight: bold;">Fun and educational toys for children of all ages, including the latest games and puzzles.</p>
+            <a href="file:///C:/Users/simon/Desktop/codehtml/toys.html" class="cta-button">Shop Toys & Games</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Returns</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/FAQs.html">FAQ</a>
+        <a href="#">Contact Us</a>
+    </div>
+    <div class="social-icons">
+        <a href="#" class="fab fa-facebook"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+    </div>
+    <p>&copy; 2024 Stockhub Store. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
+

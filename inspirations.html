@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Inspirations Stockhub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 4px;
+            padding: 3px;
+            background-color:white;
+        }
+        header {
+            background-color:black;
+            color: rgb(145, 9, 9);
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+           /* background-color: #0056b3;*/
+            margin: 5px;
+            max-width: 80%;
+        }
+        nav a {
+            color: rgb(245, 143, 10);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        /*.hero {
+            background-image: url('https://via.placeholder.com/1200x400');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px; 
+        }*/
+        .hero h2 {
+            font-size: 30px;
+            margin-top: 5px;
+        }
+        .hero p {
+            font-size: 24px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 36px;
+            color: #333;
+        }
+        .inspiration-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+        .inspiration-item {
+            background-color: rgb(221, 241, 145);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            flex: 1 1 calc(30% - 20px);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .inspiration-item:hover {
+            transform: translateY(-5px);
+        }
+        .inspiration-item img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+        .inspiration-item h3 {
+            font-size: 24px;
+            color: #007bff;
+        }
+        .inspiration-item p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color:black;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        footer .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        footer .social-icons {
+            margin-top: 20px;
+        }
+        footer .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .inspiration-item {
+                flex: 1 1 calc(45% - 20px); /* 2 items per row on smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .inspiration-item {
+                flex: 1 1 100%; /* 1 item per row on mobile */
+            }
+        }
+        a:hover {
+            color:green;
+            text-decoration: underline;
+       }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Our Inspirations</h1>
+    <nav>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/main.html">Home</a>
+      <!--<a href="file:///C:/Users/simon/Desktop/codehtml/products.html">Products</a>-->
+        <a href="file:///C:/Users/simon/Desktop/codehtml/categories.html">Categories</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/about.html">About Us</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/services.html">Services</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/inspirations.html">Inspirations</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/order.html">Order</a>
+        <!--<a href="file:///C:/Users/simon/Desktop/codehtml/contacts.html">Contact</a>-->
+    </nav>
+</header>
+
+<div class="hero">
+    <h2>What Drives Us</h2>
+    <p>At Our Stockhub Store, we are inspired by a passion for quality, innovation, and customer satisfaction.</p>
+</div>
+
+<div class="container">
+    <h2 class="section-title">Our Core Inspirations</h2>
+   
+    
+    <div class="inspiration-section">
+        <div class="inspiration-item">
+            <img src="C:\Users\simon\Desktop\codehtml\photosweb\insipire\pexels-pixabay-256514.jpg">
+            <h3>Commitment to Quality</h3>
+            <p>We are dedicated to offering products that meet the highest standards of quality and excellence. Our goal is to bring the best to our customers every day.</p>
+        </div>
+        <div class="inspiration-item">
+            <img src="C:\Users\simon\Desktop\codehtml\photosweb\insipire\pexels-rdne-7564196.jpg">
+            <h3>Innovation</h3>
+            <p>We embrace new technologies and ideas to stay ahead of the curve and ensure our customers have access to the latest trends and innovations.</p>
+        </div>
+        <div class="inspiration-item">
+            <img src="C:\Users\simon\Desktop\codehtml\photosweb\insipire\pexels-imvitordiniz-20408359.jpg">
+            <h3>Customer First</h3>
+            <p>Everything we do is centered around our customers. Their satisfaction is our top priority, and we strive to provide an exceptional shopping experience.</p>
+        </div>
+    </div>
+    
+    <div class="inspiration-section">
+        <div class="inspiration-item">
+            <img src="C:\Users\simon\Desktop\codehtml\photosweb\insipire\pexels-akilmazumder-1072824.jpg">
+            <h3>Sustainability</h3>
+            <p>We are committed to making eco-friendly choices and promoting sustainable practices across all aspects of our business.</p>
+        </div>
+        <div class="inspiration-item">
+            <img src="C:\Users\simon\Desktop\codehtml\photosweb\insipire\pexels-fauxels-3184285.jpg">
+            <h3>Team Collaboration</h3>
+            <p>Our success is driven by teamwork and collaboration. Together, we work tirelessly to bring innovative products to the market.</p>
+        </div>
+        <div class="inspiration-item">
+            <img src="C:\Users\simon\Desktop\codehtml\photosweb\insipire\pexels-rdne-8370752.jpg">
+            <h3>Continuous Growth</h3>
+            <p>We constantly evolve and grow, ensuring that we offer products and services that meet the ever-changing needs of our customers.</p>
+        </div>
+    </div>
+    
+    <div style="text-align: center;">
+        <a href="file:///C:/Users/simon/Desktop/codehtml/categories.html" class="cta-button">Explore Our Products</a>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Returns</a>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+    </div>
+    <div class="social-icons">
+        <a href="#" class="fab fa-facebook"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+    </div>
+    <p>&copy; 2024 Stockhub Store. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us Stockhub store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Page Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color:white;
+            color: #333;
+            margin: 5px;
+        }
+        header {
+            background-color:black;
+            color:  rgb(134, 48, 7);
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+           /* background-color: #d618c6;*/
+        }
+        nav a {
+            color:rgb(245, 143, 10);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* About Us Section */
+        .about-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f1ebeb;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .about-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .about-header h2 {
+            font-size: 2.5rem;
+            color: #007bff;
+        }
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .about-section {
+            flex: 1 1 calc(48% - 30px);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: lightblue;
+            text-align: center;
+        }
+        .about-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .about-section p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #666;
+        }
+        .about-section img {
+            max-width: 45%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        /* Our Mission Section */
+        .mission {
+            background-color:lightskyblue;
+            padding: 40px 20px;
+            margin: 40px 0;
+            width: 700px;
+        }
+        .mission h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #390ae4;
+            margin-bottom: 20px;
+        }
+        .mission p {
+            max-width: 500px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            text-align: center;
+            color: #666;
+        }
+
+        /* Team Section */
+        .team-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .team-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .team-header h2 {
+            font-size: 2.5rem;
+            color:#28a745;
+        }
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .team-member {
+            flex: 1 1 calc(33% - 30px);
+            background-color:hotpink;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .team-member img {
+            max-width: 150px;
+            border-radius: 70%;
+            margin-bottom: 20px;
+        }
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .team-member p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color:black;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        footer .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        footer .social-icons {
+            margin-top: 20px;
+        }
+        footer .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .about-section {
+                flex: 1 1 100%;
+            }
+            .team-member {
+                flex: 1 1 100%;
+            }
+        }
+        /*contact us form*/
+        .contact-container {
+            max-width: 500px;
+            max-height: 600px;
+            margin: 50px auto;
+            padding: 50px;
+            background-color:pink;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            display: grid;
+        }
+        .contact-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            height: 100px;
+            resize: none;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #007bff;
+        }
+        .submit-btn {
+            width: 50%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 12px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        .contact-info {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        a:hover {
+            color:green;
+            text-decoration: underline;
+       }
+    </style>
+</head>
+<body background="C:\Users\simon\Desktop\codehtml\photosweb\imageweb\dss.png">
+
+<header>
+    <h1>About Stockhub Store</h1>
+    <nav>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/main.html">Home</a>
+        <!--<a href="file:///C:/Users/simon/Desktop/codehtml/products.html">Products</a>-->
+        <a href="file:///C:/Users/simon/Desktop/codehtml/categories.html">Categories</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/about.html">About Us</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/services.html">Services</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/inspirations.html">Inspirations</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/order.html">Order</a>
+        <!--<a href="file:///C:/Users/simon/Desktop/codehtml/contacts.html">Contact</a>-->
+    </nav>
+</header>
+
+<!-- About Us Content -->
+<div class="about-container">
+    <div class="about-header">
+        <h2>Who We Are</h2>
+    </div>
+
+    <div class="about-content">
+        <div class="about-section">
+            <img src="C:\Users\simon\Pictures\online-shopping-concept-with-icons-and-signs-2AWW3EB.jpg">
+            <h3>Our Journey</h3>
+            <p>We started with a vision to deliver exceptional products directly to our customers. Over the years, we've grown into a leading e-commerce platform known for quality and customer satisfaction.</p>
+        </div>
+
+        <div class="about-section">
+            <img src="C:\Users\simon\Pictures\internet-shopping-flat-icon-set_98292-1141.jpg">
+            <h3>Our Values</h3>
+            <p>At our core, we value integrity, quality, and transparency. We believe in building strong relationships with our customers, and our team is dedicated to providing the best service possible.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Our Mission Section -->
+<div class="mission">
+    <h2>Our Mission</h2>
+    <p>We strive to bring the best products from across the globe to your doorstep. Our mission is to simplify your shopping experience by offering top-notch products, exceptional customer service, and a seamless online experience.</p>
+</div>
+
+<!-- Team Section -->
+<div class="team-section">
+    <div class="team-header">
+        <h2>Meet Our Team</h2>
+    </div>
+
+    <div class="team-container">
+        <div class="team-member">
+        
+                <img src="C:\Users\simon\Desktop\codehtml\photosweb\imageweb\IMG-20241026-WA0027.jpg">
+                <h3>Ronald Koech</h3>
+                <p>Chief Advisor</p>
+            </div>
+            
+        <div class="team-member">
+            <img src="C:\Users\simon\Pictures\IMG_20241003_125656_941_125930.jpg">
+            <h3>Malon Kiplimo</h3>
+            <p>Lead Developer</p>
+        </div>
+
+        <div class="team-member">
+            <img src="C:\Users\simon\Desktop\codehtml\photosweb\imageweb\IMG-20241026-WA0035.jpg">
+            <h3>David kimani</h3>
+            <p>Chief Marketing Officer</p>
+        </div>
+
+        <div class="team-member">
+            <img src="C:\Users\simon\Pictures\IMG_20231029_160225.jpg">
+            <h3>Simon Waweru</h3>
+            <p>CEO & Founder</p>
+        </div>
+        <div class="team-member">
+            <img src="C:\Users\simon\Desktop\codehtml\photosweb\imageweb\Screenshot (11).png">
+            <h3>Brian Kipkoech</h3>
+            <p>Developer</p>
+        </div>
+        <div class="team-member">
+            <img src="C:\Users\simon\Desktop\codehtml\photosweb\imageweb\hr.jpg">
+            <h3>Ayata Horace</h3>
+            <p>Developer</p>
+        </div>
+        
+    </div>
+</div>
+<div class="contact-container">
+    <h2>Talk with us 😃</h2>
+    <form id="contactForm">
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Type your message here..." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+        <p class="error-message" id="errorMessage"></p>
+    </form>
+    
+    <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>Email: stockhubstore@gmail.com</p>
+        <p>Phone:+254 746506853</p>
+        <div class="social-links">
+            <a href="www.facebook.com">Facebook</a>
+            <a href="www.twiter.com">Twitter</a>
+            <a href="www.instagram.com">Instagram</a>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Returns</a>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+    </div>
+    <div class="social-icons">
+        <a href="#" class="fab fa-facebook"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+    </div>
+    <p>&copy; 2024 Stockhub Store. All Rights Reserved.</p>
+</footer>
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+        
+        // Get the form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        const errorMessage = document.getElementById('errorMessage');
+
+        // Simple validation
+        if (!name || !email || !message) {
+            errorMessage.textContent = 'Please fill out all fields.';
+        } else if (!validateEmail(email)) {
+            errorMessage.textContent = 'Please enter a valid email address.';
+        } else {
+            errorMessage.textContent = ''; // Clear error message
+            alert('Thank you for your message, ' + name + '! We will get back to you shortly.');
+            
+            // Reset form after submission
+            document.getElementById('contactForm').reset();
+        }
+    });
+
+    // Email validation function
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    }
+</script>
+</body>
+</html>

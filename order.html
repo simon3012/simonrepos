@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Products - E-Commerce</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:white;
+        }
+        header {
+            background-color:green;
+            color:rgb(134, 48, 7);
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+           /* background-color: #0056b3;*/
+        }
+        nav a {
+            color:  rgb(245, 143, 10);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 7500px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: rgb(222, 243, 130);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2.section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+        .order-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .order-form > div {
+            flex: 1 1 calc(48% - 20px);
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        input, select, textarea {
+            width: 30%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #a77d7d;
+            border-radius: 5px;
+        }
+        .product-selection, .shipping-details {
+            background-color:rgb(204, 96, 172);
+            padding:20px;
+            border-radius:8px;
+            margin-right:20px;
+        
+        }
+        .order-summary {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .order-summary table {
+            width: 80%;
+            margin-bottom: 20px;
+        }
+        .order-summary table, .order-summary th, .order-summary td {
+           /* border-collapse: collapse;*/
+            border: 1px solid #ccc;
+        }
+        .order-summary th, .order-summary td {
+            padding: 10px;
+            text-align: left;
+        }
+        .total-price {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: right;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #e974aa;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+            width: 20%;
+            text-transform: uppercase;
+            align-items: center;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color:black;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+            margin: 4px;
+        }
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        footer .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        footer .social-icons {
+            margin-top: 20px;
+        }
+        footer .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .order-form > div {
+                flex: 1 1 100%; /* 1 column layout on smaller screens */
+            }
+        }
+        .payment-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .payment-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .payment-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .payment-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .payment-container button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .payment-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            
+            
+        
+        }
+        .payment-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .payment-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        
+        }
+        .payment-container button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        a:hover {
+            color:green;
+            text-decoration: underline;
+       }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Order Your Products</h1>
+    <nav>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/main.html">Home</a>
+       <!-- <a href="file:///C:/Users/simon/Desktop/codehtml/products.html">Products</a>-->
+        <a href="file:///C:/Users/simon/Desktop/codehtml/categories.html">Categories</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/about.html">About Us</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/services.html">Services</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/inspirations.html">Inspirations</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/order.html">Order</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/contacts.html">Contact</a>
+
+    </nav>
+</header>
+
+<div class="container">
+    <h2 class="section-title">Order Summary</h2>
+    
+    <div class="order-summary">
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
+            th, td {
+                padding: 8px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Order Products</h2>
+        <table id="orderTable">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <select class="category">
+                            <option value="Electronics">Electronics</option>
+                            <option value="Clothing">Clothing</option>
+                            <option value="Home">Home</option>
+                        </select>
+                    </td>
+                    <td><input type="text" class="item" /></td>
+                    <td><input type="number" class="quantity" value="1" min="1" /></td>
+                    <td><input type="number" class="price" value="0" min="0" step="0.01" /></td>
+                    <td class="total">0.00</td>
+                    <td><button onclick="removeRow(this)">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Total Cost: $<span id="totalCost">0.00</span></h3>
+        <button onclick="addRow()">Add Item</button>
+    
+      
+    </div>
+
+    <h2 class="section-title">Complete Your Order</h2>
+
+    <form class="order-form" id="order-form">
+        <!-- Shipping Information -->
+        <div class="shipping-details">
+            <h3><u>Shipping Details</u></h3>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="3" placeholder="Enter your address" required></textarea>
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="Enter your city" required>
+
+            <label for="zip">Postal Code</label>
+            <input type="text" id="zip" name="zip" placeholder="Enter your postal code" required>
+          
+        </div>
+
+        <!-- Payment Methods -->
+        <div>
+            <h3><u>Payment Information</u></h3>
+            <label for="payment-method">Payment Method</label>
+            <select id="payment-method" name="payment-method" required>
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="bank-transfer">Bank Transfer</option>
+            </select>
+
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" name="card-number" placeholder="Enter your card number" required>
+
+            <label for="expiry-date">Expiry Date</label>
+            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" placeholder="Enter your CVV" required>
+        </div>
+    </form>
+    <div class="payment-container">
+        <h2>M-Pesa Payment</h2>
+        <form id="paymentForm">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone" placeholder="2547xxxxxxxx" required>
+    
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" name="amount" placeholder="Enter Amount" required>
+    
+            <button type="submit">Pay with M-Pesa</button>
+        </form>
+        <div class="message" id="message">
+            
+        </div>
+    </div>
+   
+
+
+<a href="#" class="cta-button" id="place-order-btn">Place Order</a>
+
+<footer>
+    <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Returns</a>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+    </div>
+    <div class="social-icons">
+        <a href="#" class="fab fa-facebook"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+    </div>
+    <p>&copy; 2024 Stockhub Store. All Rights Reserved.</p>
+</footer>
+
+<script>
+// Function to update the order total dynamically
+const qtyInputs = document.querySelectorAll('.qty-input');
+const totalPriceEl = document.getElementById('total-price');
+
+qtyInputs.forEach(input => {
+    input.addEventListener('change', updateOrderTotal);
+});
+
+function updateOrderTotal() {
+    let total = 0;
+    const orderItems = document.querySelectorAll('#order-items tr');
+    orderItems.forEach((row, index) => {
+        const price = parseFloat(row.querySelector('td:nth-child(3)').textContent.replace('$', ''));
+        const quantity = parseInt(row.querySelector('.qty-input').value);
+        const totalItemPrice = price * quantity;
+        row.querySelector('.total-item').textContent = `$${totalItemPrice.toFixed(2)}`;
+        total += totalItemPrice;
+    });
+    totalPriceEl.textContent = total.toFixed(2);
+}
+
+// Form validation and place order event
+document.getElementById('place-order-btn').addEventListener('click', function (e) {
+    e.preventDefault();
+    
+    const form = document.getElementById('order-form');
+    if (form.checkValidity()) {
+        alert('Order placed successfully!');
+        // Add logic here to send the form data to the backend server (e.g., using fetch or AJAX)
+    } else {
+        alert('Please fill out all required fields.');
+    }
+});
+///m-pesa
+const form = document.getElementById("paymentForm");
+const messageDiv = document.getElementById("message");
+
+form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const phone = document.getElementById("phone").value;
+    const amount = document.getElementById("amount").value;
+
+    messageDiv.textContent = "Processing payment...";
+
+    try {
+        const response = await fetch("http://localhost:3000/pay", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ phone, amount }),
+        });
+
+        const data = await response.json();
+        if (data.success) {
+            messageDiv.textContent = "Payment request sent! Check your phone to complete the payment.";
+            messageDiv.style.color = "green";
+        } else {
+            messageDiv.textContent = "Payment failed. Please try again.";
+            messageDiv.style.color = "red";
+        }
+    } catch (error) {
+        messageDiv.textContent = "An error occurred. Please try again.";
+        messageDiv.style.color = "red";
+    }
+});
+//order table
+
+    function updateTotal(row) {
+        const quantity = parseFloat(row.querySelector('.quantity').value);
+        const price = parseFloat(row.querySelector('.price').value);
+        const total = quantity * price;
+        row.querySelector('.total').textContent = total.toFixed(2);
+        updateGrandTotal();
+    }
+
+    function updateGrandTotal() {
+        const rows = document.querySelectorAll('#orderTable tbody tr');
+        let grandTotal = 0;
+        rows.forEach(row => {
+            const rowTotal = parseFloat(row.querySelector('.total').textContent);
+            grandTotal += rowTotal;
+        });
+        document.getElementById('totalCost').textContent = grandTotal.toFixed(2);
+    }
+
+    function addRow() {
+        const table = document.getElementById('orderTable').getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow();
+        newRow.innerHTML = `
+            <td>
+                <select class="category">
+                    <option value="Electronics">Electronics</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Home">Home</option>
+                </select>
+            </td>
+            <td><input type="text" class="item" /></td>
+            <td><input type="number" class="quantity" value="1" min="1" /></td>
+            <td><input type="number" class="price" value="0" min="0" step="0.01" /></td>
+            <td class="total">0.00</td>
+            <td><button onclick="removeRow(this)">Remove</button></td>
+        `;
+        newRow.querySelector('.quantity').addEventListener('input', function() {
+            updateTotal(this.closest('tr'));
+        });
+        newRow.querySelector('.price').addEventListener('input', function() {
+            updateTotal(this.closest('tr'));
+        });
+    }
+
+    function removeRow(button) {
+        const row = button.closest('tr');
+        row.remove();
+        updateGrandTotal();
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.quantity, .price').forEach(input => {
+            input.addEventListener('input', function() {
+                updateTotal(this.closest('tr'));
+            });
+        });
+    });
+
+    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stockhub Main Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" a href="commerce.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 3px;
+            padding: 0;
+            background-color:white;
+        }
+        header {
+            background-color:black;
+            color: rgb(134, 48, 7);
+            padding: 20px 0;
+            text-align: center;
+            margin-left: 5px;
+            margin-right: 5px;
+            
+        
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+    
+        }
+        nav a {
+            color: rgb(245, 143, 10);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+
+        }
+        a:hover {
+             color:green;
+             text-decoration: underline;
+        }
+        .hero {
+           /*background-image: url('https://via.placeholder.com/1200x400');*/
+            background-size: cover;
+            background-position: center;
+            color: rgb(245, 143, 10);
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+            color: rgb(245, 143, 10);
+        }
+        .hero p {
+            font-size: 24px;
+        }
+        .hero button {
+            background-color: #fff;
+            color:  rgb(45, 10, 245);
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .hero button:hover {
+            background-color: #e9ecef;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+            transition: transform 0.3s ease;
+            margin-top: 20px;
+        }
+        h2 {
+            text-align: center;
+            margin: 40px 0 20px;
+        }
+        
+        .categories, .featured-products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    
+        footer {
+            background-color: black;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        footer .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        footer .social-icons {
+            margin-top: 20px;
+        }
+        footer .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .category, .product {
+                flex: 1 1 calc(45% - 20px); /* 2 items per row on smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .category, .product {
+                flex: 1 1 100%; /* 1 item per row on mobile */
+            }
+        }
+        .free{
+            /*width: 40%;
+            height: 30%;*/
+            margin-left: 20px;
+            background-color: lightblue;
+            padding: 15px;
+            margin-right: 400px;
+            
+            }
+        .free img{
+            height: 250px;
+            width: 230px;
+        }
+        .box{
+            flex: 1 1 30%;
+            transition: transform 1.1s;
+            position: relative;
+            border-radius: 50px;
+        }
+        .box:hover{
+            transform: translateY(-35px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+       
+       .logohub{
+            width: 10px;
+            height: 14px;
+            transition: transform 1.1s;
+            cursor: pointer;
+            float: left;
+        
+        }
+       
+    
+    </style>
+</head>
+<body background="C:\Users\simon\Desktop\codehtml\photosweb\imageweb\fan.png">
+
+<header>
+
+<div class="my-links">
+    <h1 style="margin-top:1px;"> Welcome to Our Stockhub Store</h1>
+
+    <nav>
+        
+        <a href="file:///C:/Users/simon/Desktop/codehtml/main.html">Home</a>
+       <!-- <a href="file:///C:/Users/simon/Desktop/codehtml/products.html">Products</a>-->
+        <a href="file:///C:/Users/simon/Desktop/codehtml/categories.html">Categories</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/about.html">About Us</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/services.html">Services</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/inspirations.html">Inspirations</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/order.html">Order</a>
+    
+       <!-- <a href="file:///C:/Users/simon/Desktop/codehtml/contacts.html">Contact</a>-->
+    </nav>
+</div>
+<<div class="logohub">
+    <img src="C:\Users\simon\Desktop\codehtml\photosweb\imageweb\stock.png">
+</div>
+</header> <br><br>
+
+
+<div class="hero">
+    <h1>Shop the Latest Trends</h1>
+<p style="color: blue;">Discover our exclusive collection of products</p>
+
+    
+<!--<button> <a href="file:///C:/Users/simon/Desktop/codehtml/categories.html" > Explore Now</a></button>-->
+</div>
+<br><br><br><br><br><br>
+
+<h2 style="text-align: center; font-style: italic; ">"Everything we do is centered around our customers.<br> we strive to provide an exceptional shopping experience"</h2>
+<br><br>
+
+    <img src="C:\Users\simon\Desktop\codehtml\photosweb\imageweb\fan7.png" style=" width: 90%;
+            height:400px;
+            display: block;
+            margin-left:42px;
+            border-radius:15px;">
+
+
+<div class="container">
+    <div class="box" style="background-color: pink;">
+        <h2>"Shop, Smile, Repeat!"</h2>
+        <p style="font-weight: bold;">"Find your next favorite thing and make every purchase a little moment of happiness!</p>
+    </div>
+    <div class="box" style="background-color: lightgreen;">
+        <h2>Oh, Hello, Gorgeous!</h2>
+        <p  style="font-weight: bold;">"You deserve the best. Treat yourself to something special today!"
+        </p>
+    </div>
+    <div class="box" style="background-color: limegreen;">
+            <h2>"Love at First Click!"</h2>
+      <p  style="font-weight: bold;">Find the products you’ll adore with just one click—shop now!</p>
+    </div>
+    <div class="box" style="background-color: yellowgreen;">
+        <h2>Snuggle Up with Sweet Deals!</h2>
+        <p  style="font-weight: bold;">Get cozy with our cutest products, and enjoy big savings on every purchase</p>
+    </div> 
+    <div class="box">
+        <h2>Add to Cart, Add to Happiness!</h2>
+        <p  style="font-weight: bold;">Treat yourself to some happiness! Your cart is ready to be filled with joy.</p>
+    </div>  
+    <div class="box" style="background-color: orange;">
+        <h2>Big Smiles, Tiny Prices!</h2>
+        <p  style="font-weight: bold;">Shop adorable finds at prices that’ll make your wallet smile too</p>
+    </div> 
+    </div>
+   
+    <img src="C:\Users\simon\Desktop\codehtml\photosweb\imageweb\fan8.png" style=" width: 90%;
+            height:400px;
+            display: block;
+            margin-left:42px;
+            border-radius:15px;
+          ">
+<br><br><br><br>
+ <br><br>
+   
+    <!----<p> Or</p>
+     <button style="cursor: pointer; margin:10px; background-color:blue;"
+     onclick="window.location.href='file:///C:/Users/simon/Desktop/codehtml/account.html'">Create Account</button>
+
+    <button style="cursor: pointer; margin:10px; background-color: rgb(233, 12, 67);"
+     onclick="window.location.href='file:///C:/Users/simon/Desktop/codehtml/login.html'">Login</button>-->
+
+<footer>
+    <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Returns</a>
+        <a href="file:///C:/Users/simon/Desktop/codehtml/FAQs.html">FAQ</a>
+        <a href="#">Contact Us</a>
+    </div>
+    <div class="social-icons">
+        <a href="facebook.com" class="fab fa-facebook"></a>
+        <a href="twitter.com" class="fab fa-twitter"></a>
+        <a href="instagram.com" class="fab fa-instagram"></a>
+        <a href="linkedin.com" class="fab fa-linkedin"></a>
+    </div>
+    <p>&copy; 2024 Stockhub Store. All Rights Reserved. &#128514;</p>
+    
+</footer>
+
+</body>
+</html>

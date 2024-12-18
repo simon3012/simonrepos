@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .remove-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Your Shopping Cart</h1>
+<div id="cart">
+    <div class="cart-item">
+        <span>Item 1</span>
+        <button class="remove-btn" onclick="removeItem(this)">Remove</button>
+    </div>
+    <div class="cart-item">
+        <span>Item 2</span>
+        <button class="remove-btn" onclick="removeItem(this)">Remove</button>
+    </div>
+    <div class="cart-item">
+        <span>Item 3</span>
+        <button class="remove-btn" onclick="removeItem(this)">Remove</button>
+    </div>
+</div>
+
+<script>
+    function removeItem(button) {
+        const item = button.parentElement; // Get the parent div of the button
+        item.remove(); // Remove the item from the cart
+    }
+</script>
+
+</body>
+</html>
